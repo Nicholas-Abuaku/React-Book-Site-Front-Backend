@@ -1,0 +1,12 @@
+What's left.
+
+Create Add Book page and form.
+Create Books database and backend API
+Connect to API, fetch all books for view books page.
+Fetch all books for manage books page.
+Add routing to app. Ensure buttons take you to corresponding page from dashboard //COMPLETE
+
+Create Main book page for users to see.
+Create Book Card.
+Fetch Books from api and render onto book card.
+Modal for more info on book.
