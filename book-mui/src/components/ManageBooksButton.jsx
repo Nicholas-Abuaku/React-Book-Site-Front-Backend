@@ -4,11 +4,14 @@ import MenuItem from "@mui/material/MenuItem";
 import { useState, useEffect } from "react";
 import IconButton from "@mui/material/IconButton";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { Link } from "react-router-dom";
 
 import axios from "axios";
 
 export const ManageBooksButton = (props) => {
   const [anchor, setAnchor] = useState(null);
+  const editLink = `edit/${props.bookId}`;
+  console.log(editLink);
   const open = Boolean(anchor);
   const handleClick = (event) => {
     setAnchor(event.currentTarget);
@@ -23,6 +26,12 @@ export const ManageBooksButton = (props) => {
     axios.delete(url);
     window.location.reload();
   }
+
+  // function handleEdit() {
+  //   const id = props.bookId;
+
+  //   console.log(id);
+  // }
   return (
     <>
       <IconButton id="actions-button" onClick={handleClick}>
@@ -34,7 +43,9 @@ export const ManageBooksButton = (props) => {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Edit</MenuItem>
+        <MenuItem component={Link} to={editLink}>
+          Edit
+        </MenuItem>
         <MenuItem onClick={handleDelete}>Delete</MenuItem>
       </Menu>
     </>
