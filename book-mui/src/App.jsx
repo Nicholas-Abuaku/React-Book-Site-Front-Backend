@@ -14,6 +14,7 @@ import { Route, Routes } from "react-router-dom";
 import { AddBook } from "./pages/AddBook";
 import { EditBookPage } from "./pages/EditBookPage";
 import { Manage } from "./pages/Manage";
+import { BooksPage } from "./pages/front-end/BooksPage";
 function App() {
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
         <Route path="/dashboard/manage" element={<Manage />} />
         <Route path="/dashboard/add-book" element={<AddBook />} />
         <Route path="/dashboard/manage/edit/:id" element={<EditBookPage />} />
+        <Route path="/" element={<BooksPage />} />
       </Routes>
     </>
   );
