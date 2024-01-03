@@ -1,10 +1,18 @@
 What's left.
 
-Create Add Book page and form.
-Create Books database and backend API
-Connect to API, fetch all books for view books page.
-Fetch all books for manage books page.
+Create Add Book page and form. //COMPLETE
+Create Books database and backend API//COMPLETE
+Connect to API, fetch all books for view books page. //COMPLETE
+Fetch all books for manage books page.//COMPLETE
 Add routing to app. Ensure buttons take you to corresponding page from dashboard //COMPLETE
+Fix Update Book Method
+Sort dahboard layout (maybe watch a video of someone else making mui dashboard see how they layout)
+Styling of backend pages
+
+
+
+
+
 
 Create Main book page for users to see.
 Create Book Card.
