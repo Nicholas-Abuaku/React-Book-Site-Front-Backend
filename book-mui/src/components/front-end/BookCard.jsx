@@ -1,24 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
-import { CardActionArea, Typography } from "@mui/material";
+import { CardActionArea, Typography, Box, Modal } from "@mui/material";
 export const BookCard = (props) => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
-    <Card sx={{ width: "300px", marginTop: "5px" }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          image="https://m.media-amazon.com/images/I/71ls-I6A5KL._AC_UF894,1000_QL80_.jpg"
-          sx={{ maxWidth: "100%", borderRadius: "5px" }}
-        />
-        <CardContent sx={{ textAlign: "center" }}>
-          <Typography>Midnight Library</Typography>
-          <Typography>Matt Haig</Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+    <>
+      <Card sx={{ width: "300px", marginTop: "5px" }}>
+        <CardActionArea onClick={handleOpen}>
+          <CardMedia
+            component="img"
+            image={props.img}
+            sx={{ maxWidth: "100%", borderRadius: "5px" }}
+          />
+          <CardContent sx={{ textAlign: "center" }}>
+            <Typography>{props.title}</Typography>
+            <Typography variant="subtitle">
+              {props.authorFirstName + " " + props.authorLastName}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+      {/* Use Bootstrap for modal */}
+    </>
   );
 };
