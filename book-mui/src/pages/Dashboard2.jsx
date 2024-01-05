@@ -21,7 +21,9 @@ export const Dashboard2 = () => {
         <DashboardNav />
       </Grid>
       <Grid item xs={12} textAlign={"center"}>
-        <Typography variant="h4">Admin Panel</Typography>
+        <Typography variant="h4" sx={{ marginBottom: "110px" }}>
+          Admin Panel
+        </Typography>
       </Grid>
       <Grid
         container
