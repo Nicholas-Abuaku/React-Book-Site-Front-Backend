@@ -18,6 +18,7 @@ export const DashboardInfo = () => {
         backgroundColor:
           "linear-gradient(180deg, rgba(25,118,210,1) 21%, rgba(213,237,236,1) 27%)",
         color: "white",
+        marginRight: "200px",
       }}
     >
       <CardHeader
