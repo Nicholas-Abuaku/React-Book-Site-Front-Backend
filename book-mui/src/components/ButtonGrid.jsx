@@ -9,7 +9,12 @@ export const ButtonGrid = () => {
       <Grid
         container
         spacing={2}
-        sx={{ width: "40%", margin: "0", marginRight: "30px" }}
+        sx={{
+          width: "40%",
+          margin: "0",
+          marginRight: "30px",
+          marginLeft: "300px",
+        }}
       >
         <Grid item xs={5}>
           <DashboardViewButton />
