@@ -3,6 +3,7 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControl from "@mui/material/FormControl";
 import { TextField, Stack, Button, Typography } from "@mui/material";
 import { useState } from "react";
+import { BackEndSideBar } from "./BackEndSideBar";
 import axios from "axios";
 
 export const EditBookForm = (props) => {
@@ -61,6 +62,7 @@ export const EditBookForm = (props) => {
   console.log("Title: " + bookData.title);
   return (
     <>
+      <BackEndSideBar />
       <form method="POST" onSubmit={handleSubmit}>
         <Stack
           spacing={2}
