@@ -7,13 +7,13 @@ import axios from "axios";
 
 export const RandomBook = () => {
   const [allBooks, setAllBooks] = useState([]);
-  var length = allBooks.length;
-  const [randomBook, setRandomBook] = useState([]);
+  const [randomBook, setRandomBook] = useState(null);
   const fetchBooks = async () => {
     try {
       const res = await axios.get("http://localhost:3000/api/book/");
       setAllBooks(res.data.books);
-      setRandomBook(res.data.books[0]);
+      const randomIndex = Math.floor(Math.random() * res.data.books.length);
+      setRandomBook(res.data.books[randomIndex]);
     } catch (err) {
       console.log(err);
     }
@@ -28,22 +28,22 @@ export const RandomBook = () => {
     //Pick random number in range of size of books array
     //Display that books image and title
     <>
-      {console.log(length)}
       <Box
         textAlign={"center"}
         sx={{ float: "right", border: "1px solid", borderRadius: "5px" }}
       >
         <Typography>Reccomended Book</Typography>
-
-        <Card sx={{ width: "300px" }}>
-          <CardMedia
-            component={"img"}
-            image={randomBook.imgUrl}
-            title="Ok"
-            sx={{ objectFit: "contain", height: "400px" }}
-          />
-          <CardContent>{randomBook.title}</CardContent>
-        </Card>
+        {randomBook && (
+          <Card>
+            <CardMedia
+              component={"img"}
+              image={randomBook.imgUrl}
+              title={randomBook.title}
+              sx={{ objectFit: "contain", height: "400px" }}
+            />
+            <Typography>{randomBook.title}</Typography>
+          </Card>
+        )}
       </Box>
     </>
   );
