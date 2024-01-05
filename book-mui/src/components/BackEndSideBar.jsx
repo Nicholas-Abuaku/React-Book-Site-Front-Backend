@@ -17,11 +17,6 @@ export const BackEndSideBar = () => {
   return (
     <Drawer variant="permanent" anchor="left" sx={{ height: "100%" }}>
       <List sx={{ height: "100vh" }}>
-        {/* {["Dashboard", "Exit"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))} */}
         <ListItem button key="Dashboard" component={Link} to={"/dashboard"}>
           <ListItemIcon>
             <SpaceDashboardIcon />
