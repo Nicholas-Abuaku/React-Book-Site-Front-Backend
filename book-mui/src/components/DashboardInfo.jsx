@@ -12,13 +12,14 @@ export const DashboardInfo = () => {
   return (
     <Card
       sx={{
-        width: "10%",
-        height: "100%",
+        width: "20%",
+        height: "400px",
         background: "rgb(25,118,210)",
         backgroundColor:
           "linear-gradient(180deg, rgba(25,118,210,1) 21%, rgba(213,237,236,1) 27%)",
         color: "white",
-        marginRight: "200px",
+        marginRight: "0px",
+        textAlign: "center",
       }}
     >
       <CardHeader
