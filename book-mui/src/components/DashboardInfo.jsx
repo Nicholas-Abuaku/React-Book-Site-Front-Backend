@@ -7,8 +7,36 @@ import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import { CardHeader, IconButton } from "@mui/material";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export const DashboardInfo = () => {
+  const [date, setDate] = useState(new Date());
+  const [dbSize, setDBSize] = useState(0);
+  function currentDate() {
+    useEffect(() => {
+      const timer = setInterval(() => {
+        setDate(new Date());
+      }, 1000);
+
+      return () => {
+        clearInterval(timer);
+      };
+    }, []);
+  }
+
+  const getDBSize = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/api/book/");
+      setDBSize(res.data.books.length);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getDBSize();
+  }, []);
   return (
     <Card
       sx={{
@@ -32,9 +60,9 @@ export const DashboardInfo = () => {
       />
 
       <CardContent>
-        <Typography>Date: 31/12/2023</Typography>
+        <Typography>Date: {date.toDateString()}</Typography>
         <Typography>Time: 11:59PM</Typography>
-        <Typography>Database Size: 2 </Typography>
+        <Typography>Database Size: {dbSize} </Typography>
       </CardContent>
     </Card>
   );
