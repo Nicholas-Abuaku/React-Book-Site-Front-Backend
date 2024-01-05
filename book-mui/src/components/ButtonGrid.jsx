@@ -12,8 +12,8 @@ export const ButtonGrid = () => {
         sx={{
           width: "40%",
           margin: "0",
-          marginRight: "30px",
-          marginLeft: "300px",
+          marginRight: "100px",
+          marginLeft: "100px",
         }}
       >
         <Grid item xs={5}>
