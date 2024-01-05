@@ -3,6 +3,7 @@ import { DashboardInfo } from "./DashboardInfo";
 import { DashboardManageButton } from "./DashboardManageButton";
 import { DashboardViewButton } from "./DashboardViewButton";
 import { Grid, Stack, Box, Typography } from "@mui/material";
+import { DashboardExitButton } from "./DashboardExitButton";
 export const ButtonGrid = () => {
   return (
     <>
@@ -26,7 +27,7 @@ export const ButtonGrid = () => {
           <DashboardAddBookButtn />
         </Grid>
         <Grid item xs={7}>
-          <DashboardAddBookButtn />
+          <DashboardExitButton />
         </Grid>
       </Grid>
     </>
