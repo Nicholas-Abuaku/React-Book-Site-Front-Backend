@@ -4,6 +4,7 @@ import { BookCard } from "../../components/front-end/BookCard";
 export const BooksPage = () => {
   return (
     <>
+      <FrontEndNav />
       <BookCard />
     </>
   );
