@@ -5,11 +5,13 @@ import { DashboardAddBookButtn } from "../components/DashboardAddBookButtn";
 import { DashboardViewButton } from "../components/DashboardViewButton";
 import { DashboardManageButton } from "../components/DashboardManageButton";
 import { BackEndSideBar } from "../components/BackEndSideBar";
-import { RecentBooks } from "../components/RecentBooks";
+import { RandomBook } from "../components/RandomBook";
+import { DashboardNav } from "../components/DashboardNav";
 export const Dashboard = () => {
   return (
     <>
       <Box>
+        <DashboardNav />
         <BackEndSideBar />
         <Box
           display={"flex"}
@@ -19,8 +21,8 @@ export const Dashboard = () => {
           sx={{ border: "1px solid" }}
         >
           <ButtonGrid />
-          <RecentBooks />
           <DashboardInfo />
+          <RandomBook />
         </Box>
       </Box>
     </>

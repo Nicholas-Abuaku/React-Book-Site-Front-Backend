@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { ManageBooksButton } from "./ManageBooksButton";
 import { useEffect, useState } from "react";
+import { BackEndSideBar } from "./BackEndSideBar";
 import axios from "axios";
 export const ManageTable = () => {
   const url = "http://localhost:3000/api/book/";
@@ -29,35 +30,38 @@ export const ManageTable = () => {
   }, []);
 
   return (
-    <TableContainer component={Paper} sx={{ maxHeight: "900px" }}>
-      <Table stickyHeader>
-        <TableHead>
-          <TableRow>
-            <TableCell align="center">Id</TableCell>
-            <TableCell>Title</TableCell>
-            <TableCell>Author</TableCell>
-            <TableCell>Actions</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {allBooks.map((row) => (
-            <TableRow key={row._id}>
-              <TableCell align="center">{row._id}</TableCell>
-              <TableCell>{row.title}</TableCell>
-              <TableCell>
-                {
-                  <>
-                    {row.authorFirstName} {row.authorLastName}{" "}
-                  </>
-                }
-              </TableCell>
-              <TableCell>
-                <ManageBooksButton bookId={row._id} />
-              </TableCell>
+    <>
+      <BackEndSideBar />
+      <TableContainer component={Paper} sx={{ maxHeight: "900px" }}>
+        <Table stickyHeader>
+          <TableHead>
+            <TableRow>
+              <TableCell align="center">Id</TableCell>
+              <TableCell>Title</TableCell>
+              <TableCell>Author</TableCell>
+              <TableCell>Actions</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {allBooks.map((row) => (
+              <TableRow key={row._id}>
+                <TableCell align="center">{row._id}</TableCell>
+                <TableCell>{row.title}</TableCell>
+                <TableCell>
+                  {
+                    <>
+                      {row.authorFirstName} {row.authorLastName}{" "}
+                    </>
+                  }
+                </TableCell>
+                <TableCell>
+                  <ManageBooksButton bookId={row._id} />
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </>
   );
 };
