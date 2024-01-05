@@ -15,10 +15,10 @@ import { AddBook } from "./pages/AddBook";
 import { EditBookPage } from "./pages/EditBookPage";
 import { Manage } from "./pages/Manage";
 import { BooksPage } from "./pages/front-end/BooksPage";
+import { BackEndSideBar } from "./components/BackEndSideBar";
 function App() {
   return (
     <>
-      <DashboardNav />
       <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/view-books" element={<ViewBooks />} />
