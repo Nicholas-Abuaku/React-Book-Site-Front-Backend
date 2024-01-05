@@ -13,7 +13,7 @@ export const DashboardInfo = () => {
     <Card
       sx={{
         width: "10%",
-        height: "30%",
+        height: "100%",
         background: "rgb(25,118,210)",
         backgroundColor:
           "linear-gradient(180deg, rgba(25,118,210,1) 21%, rgba(213,237,236,1) 27%)",
@@ -32,6 +32,7 @@ export const DashboardInfo = () => {
       <CardContent>
         <Typography>Date: 31/12/2023</Typography>
         <Typography>Time: 11:59PM</Typography>
+        <Typography>Database Size: 2 </Typography>
       </CardContent>
     </Card>
   );
