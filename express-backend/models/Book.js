@@ -29,7 +29,6 @@ const bookSchema = new mongoose.Schema({
     type: String,
     required: false,
     minLength: 1,
-    maxLength: 400,
     trim: false,
   },
   imgUrl: {
