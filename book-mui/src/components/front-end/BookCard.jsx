@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
-import { CardActionArea, Typography, Box, Modal } from "@mui/material";
+import { CardActionArea, Typography } from "@mui/material";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
 export const BookCard = (props) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -27,6 +28,22 @@ export const BookCard = (props) => {
         </CardActionArea>
       </Card>
       {/* Use Bootstrap for modal */}
+
+      <Dialog onClose={handleClose} open={open} sx={{ textAlign: "center" }}>
+        <DialogTitle>
+          {props.title}
+          <Typography variant="subtitle2">
+            {" " + props.authorFirstName + " " + props.authorLastName}
+          </Typography>
+        </DialogTitle>
+        <DialogContent dividers>
+          <img
+            src={props.img}
+            style={{ maxWidth: "500px", maxHeight: "500px" }}
+          />
+          <Typography>{props.blurb}</Typography>
+        </DialogContent>
+      </Dialog>
     </>
   );
 };
