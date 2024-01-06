@@ -31,7 +31,7 @@ export const BooksPage = () => {
         marginTop={2}
       >
         {allBooks.map((book) => (
-          <Grid item xs={2}>
+          <Grid item xs={3}>
             <BookCard
               authorFirstName={book.authorFirstName}
               title={book.title}
