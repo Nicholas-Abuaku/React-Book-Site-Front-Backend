@@ -3,13 +3,13 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControl from "@mui/material/FormControl";
 import { TextField, Stack, Button, Typography } from "@mui/material";
 import { useState } from "react";
-import { BackEndSideBar } from "./BackEndSideBar";
+import { EditSuccessAlert } from "./EditSuccessAlert";
 import axios from "axios";
 
 export const AddBookForm = (props) => {
   const url = "http://localhost:3000/api/book/";
   const getUrl = url + props.bookId;
-
+  const [show, setShow] = useState(false);
   console.log("Get " + getUrl);
   const [post, setPost] = useState({
     authorFirstName: "",
@@ -27,7 +27,10 @@ export const AddBookForm = (props) => {
     event.preventDefault();
     axios
       .post(url, post)
-      .then((res) => console.log(res))
+      .then(() => {
+        setShow(true);
+        setTimeout(() => setShow(false), 2000);
+      })
       .catch((err) => console.log(err));
   }
 
@@ -84,6 +87,7 @@ export const AddBookForm = (props) => {
           >
             Submit
           </Button>
+          {show && <EditSuccessAlert action="Added" />}
         </Stack>
       </form>
     </>

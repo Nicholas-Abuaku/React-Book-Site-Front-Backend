@@ -1,15 +1,17 @@
 import React, { useEffect } from "react";
 import FormGroup from "@mui/material/FormGroup";
 import FormControl from "@mui/material/FormControl";
+import Alert from "@mui/material/Alert";
 import { TextField, Stack, Button, Typography } from "@mui/material";
 import { useState } from "react";
 import { BackEndSideBar } from "./BackEndSideBar";
+import { EditSuccessAlert } from "./EditSuccessAlert";
 import axios from "axios";
 
 export const EditBookForm = (props) => {
   const url = "http://localhost:3000/api/book/";
   const getUrl = url + props.bookId;
-
+  const [show, setShow] = useState(false);
   const [bookData, setBookData] = useState({
     authorFirstName: "",
     authorLastName: "",
@@ -48,7 +50,10 @@ export const EditBookForm = (props) => {
     event.preventDefault();
     axios
       .put(getUrl, bookData)
-      .then((res) => console.log(res))
+      .then(() => {
+        setShow(true);
+        setTimeout(() => setShow(false), 2000);
+      })
       .catch((err) => console.log(err));
   }
 
@@ -114,6 +119,7 @@ export const EditBookForm = (props) => {
             >
               Submit
             </Button>
+            {show && <EditSuccessAlert action="Updated" />}
           </Stack>
         </Stack>
       </form>
