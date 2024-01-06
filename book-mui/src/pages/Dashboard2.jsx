@@ -33,7 +33,6 @@ export const Dashboard2 = () => {
         justifyContent={"center"}
         alignItems={"center"}
         sx={{
-          border: "5px solid",
           height: "100%",
           marginLeft: "80px",
           marginTop: "10px",
